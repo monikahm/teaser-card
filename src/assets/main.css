@@ -1,0 +1,35 @@
+@import './base.css';
+
+#app {
+  box-sizing: border-box;
+  display: grid;
+  gap: 1rem;
+  grid-template-areas:
+    'xl xl xl xl'
+    'lg lg lg lg'
+    'md md md md'
+    'sm sm sm sm';
+  padding: 2rem 2rem;
+  margin: auto;
+}
+#app > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  > * {
+    flex: 1;
+  }
+}
+
+.first {
+  grid-area: xl;
+}
+.second {
+  grid-area: lg;
+}
+.third {
+  grid-area: md;
+}
+.fourth {
+  grid-area: sm;
+}
