@@ -1,18 +1,27 @@
-import { defineProps } from 'vue'
 import TeaserCard from './TeaserCard.vue'
 import type { Meta, StoryObj } from '@storybook/vue3'
-import { title } from 'process'
+import { fn } from '@storybook/test'
 
 const meta = {
   title: 'Example/TeaserCard',
   tags: ['autodocs'],
-  component: TeaserCard
-} satisfies Meta<typeof TeaserCard>
+  component: TeaserCard,
+  argTypes: {
+    size: {
+      control: {
+        type: 'select'
+      },
+      options: ['small', 'medium', 'large', 'xl']
+    }
+  }
+}
 
 export default meta
+
 type Story = StoryObj<typeof TeaserCard>
 export const ExtraLarge: Story = {
   args: {
+    onClick: fn(),
     size: 'xl',
     title: 'Example Title',
     ingress:
